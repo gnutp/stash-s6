@@ -54,12 +54,12 @@ variable "CI" {
 // common arguments
 target "_common" {
   context = "."
-  attest = [{
-      type = "provenance"
-      mode = "max"
-  }, {
-    type = "sbom"
-  }]
+  #attest = [{
+  #    type = "provenance"
+  #    mode = "max"
+  #}, {
+  #  type = "sbom"
+  #}]
   args = {
     BUILD_DATE = BUILD_DATE,
     SHORT_BUILD_DATE = SHORT_BUILD_DATE,
@@ -68,7 +68,8 @@ target "_common" {
 }
 
 target "_alpine_multi" {
-  platforms = ["linux/amd64", "linux/arm64", "linux/arm/v6", "linux/arm/v7"]
+  #platforms = ["linux/amd64", "linux/arm64", "linux/arm/v6", "linux/arm/v7"]
+  platforms = ["linux/amd64"]
 }
 
 target "_develop" {
