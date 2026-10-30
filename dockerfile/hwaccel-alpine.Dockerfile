@@ -37,11 +37,18 @@ RUN \
   echo "**** install packages ****" && \
   apk add --no-cache --no-progress \
     ca-certificates \
-    jellyfin-ffmpeg \
     tzdata \
     uv \
     vips-tools\
     vips-heif
+RUN \
+  echo "**** install jellyfin-ffmpeg ****" && \
+    apk add --no-cache --no-progress \
+      --repository https://dl-cdn.alpinelinux.org/alpine/edge/main \
+      x265-libs && \
+     apk add --no-cache --no-progress \
+      --repository https://dl-cdn.alpinelinux.org/alpine/edge/community \
+      jellyfin-ffmpeg
 RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
   echo "**** install optional x86 drivers ****" && \
     apk add --no-cache --no-progress \
