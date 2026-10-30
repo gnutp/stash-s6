@@ -4,19 +4,9 @@ group "release_ci_alpine" {
   output = ["type=registry"]
 }
 
-group "release_ci_debian" {
-  targets = ["hwaccel"]
-  output = ["type=registry"]
-}
-
 // develop CI
 group "develop_ci_alpine" {
   targets = ["alpine-develop", "hwaccel-alpine-develop", "hwaccel-develop"]
-  output = ["type=registry"]
-}
-
-group "develop_ci_debian" {
-  targets = ["hwaccel-develop"]
   output = ["type=registry"]
 }
 
@@ -81,10 +71,6 @@ target "_alpine_multi" {
   platforms = ["linux/amd64", "linux/arm64", "linux/arm/v6", "linux/arm/v7"]
 }
 
-target "_debian_multi" {
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-
 target "_develop" {
   args = {
     STASH_TAG = "development"
@@ -106,14 +92,6 @@ target "hwaccel-alpine" {
   tags = tag("hwaccel-alpine")
   cache-to = cache_to("hwaccel-alpine")
   cache-from = cache_from("hwaccel-alpine")
-}
-
-target "hwaccel" {
-  inherits = ["_common", "_debian_multi"]
-  dockerfile = "dockerfile/hwaccel.Dockerfile"
-  tags = tag("hwaccel")
-  cache-to = cache_to("hwaccel")
-  cache-from = cache_from("hwaccel")
 }
 
 // develop

@@ -17,12 +17,6 @@ for [stashapp/stash#4300](https://github.com/stashapp/stash/issues/4300)
 ghcr.io/feederbox826/stash-s6:alpine
 ```
 no hardware acceleration, built on alpine linux
-## `hwaccel` ![Image size](https://img.shields.io/docker/image-size/feederbox826/stash-s6/hwaccel)
-
-```
-ghcr.io/feederbox826/stash-s6:hwaccel
-```
-hardware acceleration from [jellyfin-ffmpeg](https://jellyfin.org/docs/general/administration/hardware-acceleration/), built on debian. (Scheduled to be replaced with v0.29.0 [#46](https://github.com/feederbox826/stash-s6/issues/46))
 
 ## `hwaccel-alpine` ![Image size](https://img.shields.io/docker/image-size/feederbox826/stash-s6/hwaccel-alpine)
 
@@ -35,7 +29,6 @@ hardware acceleration from [jellyfin-ffmpeg](https://jellyfin.org/docs/general/a
 
 Append `-develop` to the tag to run the development builds of stash
 - `develop` / `alpine-develop` ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/feederbox826/stash-s6/alpine-develop)
-- `hwaccel-develop` ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/feederbox826/stash-s6/hwaccel-develop)
 - `hwaccel-alpine-develop` ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/feederbox826/stash-s6/hwaccel-alpine-develop)
 
 Date suffixes are also available for point-in-time snapshotting.

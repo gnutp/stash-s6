@@ -54,7 +54,6 @@ jobs:
           push: true
           targets: |
             release_ci_alpine
-            release_ci_debian
         env:
           GITHASH: ${{ steps.meta.outputs.GITHASH }}
           BUILD_DATE: ${{ steps.meta.outputs.TIMESTAMP }}
