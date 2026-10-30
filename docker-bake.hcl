@@ -18,7 +18,7 @@ group "default" {
 // variables
 variable "OWNER_NAME" {
   type = string
-  default = "feederbox826"
+  default = "gnutp"
 }
 
 variable "IMAGE_NAME" {
